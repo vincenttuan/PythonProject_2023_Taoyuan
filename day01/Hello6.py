@@ -11,6 +11,10 @@ print('BMI =', bmi)
 bmi = w / h**2  # ** 次方
 print('BMI =', bmi)
 
+# 將印出的資料格式化
+# 例如: BMI = 20.761245674740486 -> BMI = 20.76
+print("BMI = %.2f" % bmi)
+
 
 
 
