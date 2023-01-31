@@ -15,9 +15,9 @@ print("%s %s 目前價格:%d 買進價格:%d 買進股數:%s 投資金額:%s" %
 profit = (price - buy_price) * amount
 print('獲利狀態: ', end='')
 if profit > 0:
-    print("獲利: %d", format(profit, ","))
+    print("獲利: %s" % format(profit, ","))
 elif profit < 0:
-    print("虧損: %d", format(profit, ","))
+    print("虧損: %s" % format(profit, ","))
 else:
     print("持平")
 
