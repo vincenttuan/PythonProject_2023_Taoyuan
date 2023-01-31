@@ -16,3 +16,7 @@ print(type(pi), type(value))
 a, b, c, d = 10, 20.5, True, 'Mary'
 print(a, b, c, d)
 print(type(a), type(b), type(c), type(d))
+
+# 刪除變數
+del a  # 將 a 變數刪除
+print(a)  # 此行執行時會發生錯誤
