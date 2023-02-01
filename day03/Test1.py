@@ -15,4 +15,9 @@ else:
 print('有 on' if words.find('on') != -1 else '無 on')
 result = '有 on' if words.find('on') != -1 else '無 on'
 print(result)
+# --------------------------------------------------
+# 'she sell sea shell on the sea shore' 有幾個單字詞
+# word = words.split(' ')
+word = words.split()  # 預設就是 (' ')
+print(word, len(word))
 
