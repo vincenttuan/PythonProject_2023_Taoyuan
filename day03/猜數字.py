@@ -5,6 +5,7 @@ import random as r
 ans = r.randint(1, 9)
 while True:
     # 玩家猜
+    # ----------------------------------------------
     guess = input('玩家 1~9 請猜一個數字: ')
     # 判斷是否輸入的都是數字
     if not guess.isdigit():
@@ -17,12 +18,28 @@ while True:
         print('數字不在 1~9 範圍內, 請重猜!')
         continue
     # 比對答案
+    # ----------------------------------------------
     if guess > ans:
-        print('猜大了')
+        print('玩家猜大了')
     elif guess < ans:
-        print('猜小了')
+        print('玩家猜小了')
     else:
         print('答案: {} 玩家贏了'.format(ans))
         break
+
+    # 電腦猜
+    # ----------------------------------------------
+    pc_guess = r.randint(1, 9)
+    print('電腦 1~9 請猜一個數字: {}'.format(pc_guess))
+    # 比對答案
+    # ----------------------------------------------
+    if pc_guess > ans:
+        print('電腦猜大了')
+    elif pc_guess < ans:
+        print('電腦猜小了')
+    else:
+        print('答案: {} 電腦贏了'.format(ans))
+        break
+
 
 print('遊戲結束')
