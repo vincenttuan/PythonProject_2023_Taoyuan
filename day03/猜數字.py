@@ -4,7 +4,13 @@ import random as r
 # 若猜得比答案大 -> 顯示猜大了
 ans = r.randint(1, 9)
 while True:
-    guess = int(input('1~9 請猜一個數字: '))
+    # 玩家猜
+    guess = int(input('玩家 1~9 請猜一個數字: '))
+    # 先過濾玩家所猜的數字是不是在合理範圍內
+    if guess < 1 or guess > 9:
+        print('數字不在 1~9 範圍內, 請重猜!')
+        continue
+    # 比對答案
     if guess > ans:
         print('猜大了')
     elif guess < ans:
