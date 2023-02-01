@@ -13,4 +13,4 @@ print(english, type(english))
 total = chinese + math + english
 avg = total / 3
 print(total, avg)
-print("總分: {0} 平均: {1:.1f}".format(total, avg))
+print("總分: {0} 平均: {1:,.1f}".format(total, avg))
