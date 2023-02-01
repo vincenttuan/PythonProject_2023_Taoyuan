@@ -5,7 +5,13 @@ import random as r
 ans = r.randint(1, 9)
 while True:
     # 玩家猜
-    guess = int(input('玩家 1~9 請猜一個數字: '))
+    guess = input('玩家 1~9 請猜一個數字: ')
+    # 判斷是否輸入的都是數字
+    if not guess.isdigit():
+        print('請輸入數字')
+        continue
+    # 資料轉型 str -> int
+    guess = int(guess)
     # 先過濾玩家所猜的數字是不是在合理範圍內
     if guess < 1 or guess > 9:
         print('數字不在 1~9 範圍內, 請重猜!')
