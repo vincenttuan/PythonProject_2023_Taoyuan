@@ -4,7 +4,7 @@ import random as r
 # 若猜得比答案大 -> 顯示猜大了
 ans = r.randint(1, 9)
 while True:
-    guess = int(input('1~9 請猜一個數字:'))
+    guess = int(input('1~9 請猜一個數字: '))
     if guess > ans:
         print('猜大了')
     elif guess < ans:
