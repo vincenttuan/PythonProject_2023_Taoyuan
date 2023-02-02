@@ -25,3 +25,9 @@ for emp in employees:
 
 print(high_salary)
 # 最低薪資 = ?
+low_salary = high_salary
+for emp in employees:
+    if emp['salary'] < low_salary:
+        low_salary = emp['salary']
+
+print(low_salary)
