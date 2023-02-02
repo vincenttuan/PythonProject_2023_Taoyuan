@@ -13,4 +13,13 @@ for i in range(1, 5):
 for i in range(0, 4):
     print(r.randint(1, 9), end=' ')
 print()
-
+# -----------------------------------
+for i in range(1, 10, 3):
+    print(i)
+# -----------------------------------
+# for 迴圈與數組的關係
+for score in [100, 90, 80, 70, 60]:
+    print(score)
+# -----------------------------------
+for i, score in enumerate([100, 90, 80, 70, 60]):
+    print(i, score)
