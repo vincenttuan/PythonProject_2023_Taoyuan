@@ -15,13 +15,16 @@ def checkBmi(bmi):
         result = '過輕'
     return result
 
+def printBmi(bmi, result):
+    print('BMI: {0:.2f} {1}'.format(bmi, result))
+
 def calcBmi(h, w):
     # 1. 計算 bmi
     bmi = getBmi(h, w)
     # 2. 驗證 bmi 是否正常
     result = checkBmi(bmi)
     # 3. 印出所需結果
-    print('BMI: {0:.2f} {1}'.format(bmi, result))
+    print(bmi, result)
 
 
 if __name__ == '__main__':
