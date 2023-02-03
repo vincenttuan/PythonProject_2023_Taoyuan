@@ -7,6 +7,7 @@ def getBmi(h, w):
     bmi = w / (h/100)**2
     return bmi
 
+
 def checkBmi(bmi):
     result = '正常'  # 假設是正常
     if bmi > 23:
@@ -15,8 +16,10 @@ def checkBmi(bmi):
         result = '過輕'
     return result
 
+
 def printBmi(bmi, result):
     print('BMI: {0:.2f} {1}'.format(bmi, result))
+
 
 def calcBmi(h, w):
     # 1. 計算 bmi
