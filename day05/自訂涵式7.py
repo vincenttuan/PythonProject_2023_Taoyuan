@@ -24,7 +24,7 @@ def calcBmi(h, w):
     # 2. 驗證 bmi 是否正常
     result = checkBmi(bmi)
     # 3. 印出所需結果
-    print(bmi, result)
+    printBmi(bmi, result)
 
 
 if __name__ == '__main__':
