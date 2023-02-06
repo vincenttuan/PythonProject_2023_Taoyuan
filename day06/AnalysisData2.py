@@ -23,8 +23,8 @@ if __name__ == '__main__':
     # 繪圖
     salary = [sal//1000 for sal in salary]
     # 設定圖表中文字形
-    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
-    plt.rcParams['axes.unicode_minus'] = False
+    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']  # 將字體設定為微軟預設中文字型
+    plt.rcParams['axes.unicode_minus'] = False  # 用來正常顯示負號
 
     plt.plot(salary, marker="o", label='薪資(K)')
     plt.plot(age, marker="o", label='年齡')
