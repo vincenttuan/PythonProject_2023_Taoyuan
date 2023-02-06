@@ -1,5 +1,5 @@
 # 從指定檔案中取得 employees 資料
-def get_employees_from_file(file_name):
+def get_employees_from_file(file_name, col_name1='name', col_name2='salary'):
     file = open(file_name, 'r', encoding='UTF-8')
     # 讀取整個檔案到數組(串列, 陣列)
     rows = file.readlines()
@@ -22,8 +22,8 @@ def get_employees_from_file(file_name):
         data = row.split()
         # print(data)
         dict = {}
-        dict.setdefault('name', data[0])
-        dict.setdefault('salary', int(data[1]))
+        dict.setdefault(col_name1, data[0])
+        dict.setdefault(col_name2, int(data[1]))
         # print(dict)
         employees.append(dict)
     # 將 employees 資料結構回傳
