@@ -22,14 +22,17 @@ if __name__ == '__main__':
 
     # 繪圖
     salary = [sal//1000 for sal in salary]
+    names = [emp['name'] for emp in employees_salary]
+    # print(names)
     # 設定圖表中文字形
     plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']  # 將字體設定為微軟預設中文字型
     plt.rcParams['axes.unicode_minus'] = False  # 用來正常顯示負號
 
-    plt.plot(salary, marker="o", label='薪資(K)')
-    plt.plot(age, marker="o", label='年齡')
+    plt.plot(names, salary, marker="o", label='薪資(K)')
+    plt.plot(names, age, marker="o", label='年齡')
     plt.grid(True)  # 加入格線
     plt.title('員工統計圖表')
     plt.legend()  # 加上圖例
+    plt.ylabel('年齡/薪資(K)')
     plt.show()
 
