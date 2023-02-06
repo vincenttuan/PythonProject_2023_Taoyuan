@@ -1,3 +1,4 @@
+import matplotlib.pyplot as plt
 import statistics as stat
 from day06.ReadFile import get_employees_from_file
 if __name__ == '__main__':
@@ -18,4 +19,17 @@ if __name__ == '__main__':
     age_cv = stat.stdev(age) / stat.mean(age)
     print('salary cv: {:.3f} age cv: {:.3f}'.format(salary_cv, age_cv))
     print('{0}的分散程度大'.format('salary' if salary_cv > age_cv else 'age'))
+
+    # 繪圖
+    salary = [sal//1000 for sal in salary]
+    # 設定圖表中文字形
+    plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
+    plt.rcParams['axes.unicode_minus'] = False
+
+    plt.plot(salary, marker="o", label='薪資(K)')
+    plt.plot(age, marker="o", label='年齡')
+    plt.grid(True)  # 加入格線
+    plt.title('員工統計圖表')
+    plt.legend()  # 加上圖例
+    plt.show()
 
