@@ -31,7 +31,7 @@ if __name__ == '__main__':
     plt.plot(names, salary, marker="o", label='薪資(K)')
     plt.plot(names, age, marker="o", label='年齡')
     plt.grid(True)  # 加入格線
-    plt.title('員工統計圖表')
+    plt.title('員工統計圖表\n薪資CV:{:.2f} 年齡CV:{:.2f}'.format(salary_cv, age_cv))
     plt.legend()  # 加上圖例
     plt.ylabel('年齡/薪資(K)')
     plt.show()
