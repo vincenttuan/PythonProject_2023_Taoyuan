@@ -3,7 +3,7 @@ def get_employees_from_file(file_name, col_name1='name', col_name2='salary'):
     file = open(file_name, 'r', encoding='UTF-8')
     # 讀取整個檔案到數組(串列, 陣列)
     rows = file.readlines()
-    print(rows)
+    # print(rows)
     # 將每一筆資料放到 dict 的結構中
     # Ex: {'name': 'John', 'salary': 45000}
     # 目的:
