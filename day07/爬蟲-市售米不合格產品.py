@@ -39,7 +39,9 @@ if __name__ == '__main__':
     # 分析結果
     print('分析結果:')
     print('筆數:', len(result))
-    print('資料:', result)
+    print('資料:')
+    for i, data in enumerate(result):
+        print('{}. 品名: {} 不合格原因: {}'.format(i+1, data['品名'], data['不合格原因']))
 
 
 
