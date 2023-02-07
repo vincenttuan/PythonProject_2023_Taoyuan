@@ -12,7 +12,7 @@ def get_json_str(url):  # 透過指定 url 將 json 字串資料下載下來
 if __name__ == '__main__':
     # 1. 原始資料取得
     url = 'https://data.coa.gov.tw/Service/OpenData/FromM/AgricultureiRiceFailure.aspx'
-    json_str = get_json_str(url);
+    json_str = get_json_str(url)
     # print(json_str)
     # 2. 資料傳換成可整理/分析結構
     # 因為 json 字串無法直接分析, 必須透過 json.loads() 轉成數組資料結構才可以分析
