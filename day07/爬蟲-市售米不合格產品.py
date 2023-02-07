@@ -29,5 +29,17 @@ if __name__ == '__main__':
         food.setdefault('不合格原因', data['不合格原因'])
         bad_foods.append(food)
     print(bad_foods)
+    # 分析資料
+    print('分析資料:')
+    result = []  # 用來存放分析結果
+    keyword = input('請輸入關鍵字: ')
+    for food in bad_foods:
+        if keyword in food['品名']:  # 資料比對
+            result.append(food)  # 找到資料放入分析結果中
+    # 分析結果
+    print('分析結果:')
+    print('筆數:', len(result))
+    print('資料:', result)
+
 
 
