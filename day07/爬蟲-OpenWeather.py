@@ -24,8 +24,8 @@ weather.setdefault('天氣說明', weather_description)
 weather.setdefault('現在氣溫', '{:.2f}°C'.format(weather_temp))
 weather.setdefault('體感氣溫', '{:.2f}°C'.format(weather_feels_like))
 weather.setdefault('現在濕度', '{}%'.format(weather_humidity))
-weather.setdefault('現在風速', weather_wind_speed)
-weather.setdefault('雲層覆蓋', weather_clouds)
+weather.setdefault('現在風速', '{} m/s'.format(weather_wind_speed))
+weather.setdefault('雲層覆蓋', '{}%'.format(weather_clouds))
 print(weather)
 
 for key in weather.keys():
