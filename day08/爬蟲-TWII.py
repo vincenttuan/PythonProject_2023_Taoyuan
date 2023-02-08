@@ -4,6 +4,22 @@
 import requests
 import datetime
 
+def line_notify(dict):
+    url = 'https://notify-api.line.me/api/notify'
+    token = 'XzuR3y49pyfnXAyahTapEkgawe3Hslhr5zeveJfPWTS'
+    headers = {
+        "Authorization": "Bearer " + token
+    }
+    # 輸入要傳送的內容
+    msg = '買進 {} {}'.format(dict['證券代號'], dict['證券名稱'])
+    payload = {
+        "message": msg
+    }
+    # 傳送到 LineNotify
+    resp = requests.post(url, headers=headers, params=payload)
+    print(resp)  # 若看到 200 送成功
+
+
 if __name__ == '__main__':
     date = datetime.datetime(2023, 2, 7)  # 得到日期物件
     print(date)
@@ -44,3 +60,4 @@ if __name__ == '__main__':
         # 除去有負值的資料
         if 0 < t['本益比'] <= 12 and t['殖利率'] >= 7 and 0 < t['股價淨值比'] <= 1:
             print(t)
+            line_notify(t)
