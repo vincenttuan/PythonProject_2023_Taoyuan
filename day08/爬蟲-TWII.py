@@ -33,7 +33,6 @@ if __name__ == '__main__':
                 dict.setdefault('股價淨值比', float(row[5]))
                 dict.setdefault('財報', row[6])
                 twii.append(dict)
-            except:
+            except ValueError:
                 pass
     print(twii)
-
