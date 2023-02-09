@@ -12,7 +12,17 @@ def find_all():
     return rows
 
 
+def find_one(id):
+    sql = 'select id, employee_name, employee_salary, create_time from employee where id = ?'
+    conn = sqlite3.connect('demo.db')
+    cursor = conn.cursor()
+    cursor = cursor.execute(sql, [id])
+    row = cursor.fetchone()
+    return row
+
+
 if __name__ == '__main__':
+    # 多筆
     employees = find_all()
     # 將資料印出
     print('%2s %-6s %8s %-24s' % ('ID', 'Name', 'Salary', 'Time'))
@@ -21,4 +31,13 @@ if __name__ == '__main__':
         print('%2d %-6s %8s %-24s' % (emp[0], emp[1], '{:,}'.format(emp[2]), emp[3]))
     print('---------------------------------------')
 
-
+    # 單筆
+    emp = find_one(1)
+    # 將資料印出
+    print('%2s %-6s %8s %-24s' % ('ID', 'Name', 'Salary', 'Time'))
+    print('---------------------------------------')
+    if emp is not None:
+        print('%2d %-6s %8s %-24s' % (emp[0], emp[1], '{:,}'.format(emp[2]), emp[3]))
+    else:
+        print(' 查無資料 ')
+    print('---------------------------------------')
