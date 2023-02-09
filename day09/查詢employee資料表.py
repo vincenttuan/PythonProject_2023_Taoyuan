@@ -42,3 +42,7 @@ if __name__ == '__main__':
     # 單筆
     emp = find_one(1)
     print_employee([emp])
+
+    # 單筆
+    emp = find_one(201)
+    print_employee([emp])
