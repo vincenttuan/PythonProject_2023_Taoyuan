@@ -22,7 +22,7 @@ while True:
     faces = face_cascade.detectMultiScale(
         gray,  # 待偵測圖片
         scaleFactor=1.1,  # 檢測粒度(數字越小越精準(但速度慢), 反之數字越大越模糊(速度快))
-        minNeighbors=5,  # 檢測次數(每個目標至少要檢測通過幾次才算成功，才被認定是 face)
+        minNeighbors=15,  # 檢測次數(每個目標至少要檢測通過幾次才算成功，才被認定是 face)
         minSize=(30, 30),  # 搜尋比對最小尺寸
         flags=cv2.CASCADE_SCALE_IMAGE  # 比對類型
     )
