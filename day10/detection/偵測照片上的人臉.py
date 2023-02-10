@@ -14,4 +14,9 @@ import cv2
 face_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_frontalface_default.xml')
 print(face_cascade)
 
+# 讀影像檔
+frame = cv2.imread('../sample_image/test.jpg')
+print(frame)
+
+
 
