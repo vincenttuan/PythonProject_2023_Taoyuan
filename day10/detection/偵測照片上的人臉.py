@@ -32,4 +32,14 @@ faces = face_cascade.detectMultiScale(
 )
 print('臉部座標(x, y, w, h):', faces)
 
+# 在 face 周圍畫上矩形
+for (x, y, w, h) in faces:
+    # 參數: frame, 左上角座標, 右下角座標, BGR色碼, 框線的寬度
+    cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
 
+# 將 frame 顯示
+cv2.imshow('My Image', frame)
+
+# 按下任意鍵離開程式
+c = cv2.waitKey(0)
+print(c)
