@@ -12,6 +12,9 @@ import cv2
 
 # 人臉特徵檔
 face_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_frontalface_default.xml')
+# 眼睛特徵檔
+eye_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_eye.xml')
+
 print(face_cascade)
 
 # 讀影像檔
@@ -36,6 +39,18 @@ print('臉部座標(x, y, w, h):', faces)
 for (x, y, w, h) in faces:
     # 參數: frame, 左上角座標, 右下角座標, BGR色碼, 框線的寬度
     cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+    # 在 face 內進行眼部偵測
+    roi_color = frame[y:y+h, x:x+w]  # 人臉區域-彩色(y, x)
+    roi_gray = gray[y:y+h, x:x+w]  # 人臉區域-灰階(y, x)
+    eyes = eye_cascade.detectMultiScale(
+        roi_gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
+    for (ex, ey, ew, eh) in eyes:
+        cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 0, 255), 2)
 
 # 將 frame 顯示
 cv2.imshow('My Image', frame)
