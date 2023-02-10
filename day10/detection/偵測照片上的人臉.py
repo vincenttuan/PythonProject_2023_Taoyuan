@@ -43,6 +43,7 @@ for (x, y, w, h) in faces:
     # 在 face 內進行眼部偵測
     roi_color = frame[y:y+h, x:x+w]  # 人臉區域-彩色(y, x)
     roi_gray = gray[y:y+h, x:x+w]  # 人臉區域-灰階(y, x)
+    # 眼睛偵測
     eyes = eye_cascade.detectMultiScale(
         roi_gray,
         scaleFactor=1.1,
@@ -50,8 +51,21 @@ for (x, y, w, h) in faces:
         minSize=(30, 30),
         flags=cv2.CASCADE_SCALE_IMAGE
     )
+    # 眼睛繪製
     for (ex, ey, ew, eh) in eyes:
         cv2.rectangle(roi_color, (ex, ey), (ex + ew, ey + eh), (0, 0, 255), 2)
+
+    # 微笑偵測
+    smile = smile_cascade.detectMultiScale(
+        roi_gray,
+        scaleFactor=1.1,
+        minNeighbors=5,
+        minSize=(30, 30),
+        flags=cv2.CASCADE_SCALE_IMAGE
+    )
+    # 微笑繪製
+    for (sx, sy, sw, sh) in smile:
+        cv2.rectangle(roi_color, (sx, sy), (sx + sw, sy + sh), (255, 0, 0), 2)
 
 # 將 frame 顯示
 cv2.imshow('My Image', frame)
