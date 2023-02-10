@@ -14,16 +14,17 @@ import cv2
 face_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_frontalface_default.xml')
 # 眼睛特徵檔
 eye_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_eye.xml')
-
-print(face_cascade)
+# 微笑特徵檔
+smile_cascade = cv2.CascadeClassifier('../haarcascade/haarcascade_smile.xml')
+# print(face_cascade)
 
 # 讀影像檔
 frame = cv2.imread('../sample_image/test.jpg')
-print(frame)
+# print(frame)
 
 # 將彩色圖片(RGB)進行灰階(Gray)處理資加效率
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-print(gray)
+# print(gray)
 
 # 偵測臉部, 得到臉部區域座標與長寬(x, y, w, h)
 faces = face_cascade.detectMultiScale(
